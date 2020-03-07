@@ -1,0 +1,50 @@
+buildscript {
+    repositories {
+        jcenter()
+        google()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.6.1'
+    }
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+    }
+    lintOptions {
+        abortOnError false
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        maven() {
+            url 'http://143.89.39.114:8081/repository/wherami/'
+            credentials {
+                username "path_advisor"
+                password "hkust"
+            }
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+    google()
+}
+
+dependencies {
+    implementation 'com.facebook.react:react-native:+'
+    implementation 'com.mtrec.wherami:offlinesdk:1.0.8.9'
+}
+  
