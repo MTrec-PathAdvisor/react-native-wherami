@@ -47,7 +47,7 @@ public class RNWheramiModule extends ReactContextBaseJavaModule implements MapEn
 
 
     @ReactMethod
-    private void initialize(Callback initializationCallback) {
+    private void checkSelfPermission(Callback initializationCallback) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             String[] permissions = null;
             try {
