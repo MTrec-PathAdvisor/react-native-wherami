@@ -31,5 +31,3 @@ Wherami.start();
 //Stop the engine
 Wherami.stop();
 ```
-Thu Mar 26 11:45:15 HKT 2020
-Thu Mar 26 11:46:13 HKT 2020
