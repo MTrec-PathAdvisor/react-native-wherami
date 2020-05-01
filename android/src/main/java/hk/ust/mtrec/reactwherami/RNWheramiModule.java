@@ -8,20 +8,17 @@ import androidx.annotation.Nullable;
 import android.util.Log;
 
 import com.facebook.react.bridge.Arguments;
-import com.facebook.react.bridge.Callback;
-import com.facebook.react.bridge.Promise;
+
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
-import com.facebook.react.bridge.ReadableArray;
 import com.facebook.react.bridge.WritableArray;
 import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
 
 import java.io.StreamCorruptedException;
 import java.net.URISyntaxException;
-import java.util.ArrayList;
 
 import wherami.lbs.sdk.Client;
 import wherami.lbs.sdk.core.MapEngine;
@@ -47,13 +44,15 @@ public class RNWheramiModule extends ReactContextBaseJavaModule implements MapEn
 
 
     @ReactMethod
-    private void checkSelfPermission(Callback initializationCallback) {
+    private void checkSelfPermission() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             String[] permissions = null;
             try {
                 permissions = reactContext.getPackageManager().getPackageInfo(reactContext.getPackageName(), PackageManager.GET_PERMISSIONS).requestedPermissions;
             } catch (PackageManager.NameNotFoundException e) {
-                initializationCallback.invoke(e.getCause());
+                WritableMap params = Arguments.createMap();
+                params.putString("message", e.getMessage());
+                sendEvent(reactContext, "message", params);
             }
 
             Log.d(TAG, permissions.toString());
@@ -70,33 +69,43 @@ public class RNWheramiModule extends ReactContextBaseJavaModule implements MapEn
                     params.putArray("missingPermissions", missingPermissions);
                     sendEvent(reactContext, "requestPermission", params);
                 } else {
+                    WritableMap params = Arguments.createMap();
+                    params.putString("message", "All permissions granted, starting Wherami initialization.");
+                    sendEvent(reactContext, "message", params);
                     initializeSDK();
                 }
             }
 
-        }
-        else{
+        } else {
+            WritableMap params = Arguments.createMap();
+            params.putString("message", "SDKversion < M, starting Wherami initialization.");
+            sendEvent(reactContext, "message", params);
             initializeSDK();
         }
     }
 
     @ReactMethod
     private void initializeSDK() {
-
         try {
             Client.Configure("https://dy199-079.ust.hk",
                     "UST_June", reactContext
             );
         } catch (URISyntaxException e) {
-
+            WritableMap params = Arguments.createMap();
+            params.putString("message", e.getMessage());
+            sendEvent(reactContext, "message", params);
         } catch (StreamCorruptedException e) {
-
+            WritableMap params = Arguments.createMap();
+            params.putString("message", e.getMessage());
+            sendEvent(reactContext, "message", params);
         }
 
         Client.UpdateData(new Client.DataUpdateCallback() {
             @Override
             public void onProgressUpdated(int i) {
-
+                WritableMap params = Arguments.createMap();
+                params.putString("message", "updating: " + i + "%");
+                sendEvent(reactContext, "message", params);
             }
 
             @Override
@@ -106,7 +115,9 @@ public class RNWheramiModule extends ReactContextBaseJavaModule implements MapEn
 
             @Override
             public void onFailed(Exception e) {
-
+                WritableMap params = Arguments.createMap();
+                params.putString("message", e.getMessage());
+                sendEvent(reactContext, "message", params);
             }
         }, reactContext);
     }
@@ -167,6 +178,8 @@ public class RNWheramiModule extends ReactContextBaseJavaModule implements MapEn
             sendEvent(reactContext, "onLocationUpdate", params);
 
         } else {
+
+            params.putMap("location", null);
             sendEvent(reactContext, "onLocationUpdate", params);
         }
     }
