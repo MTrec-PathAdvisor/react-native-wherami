@@ -1,0 +1,27 @@
+{
+  "name": "Mtrec-IOS-LBSOfflineSDK",
+  "version": "0.0.2",
+  "summary": "A short description of Mtrec-IOS-LBSOfflineSDK.",
+  "description": "Mtrec LBSOfflineSDK for IOS platflat. All right reserved by HKUST Multimedia technology research center.",
+  "homepage": "https://github.com/wltsuiac/Mtrec-IOS-LBSOfflineSDK",
+  "license": "MIT",
+  "authors": {
+    "PeterTsui": "ptsuiwl@ust.hk"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "ios": {
+    "vendored_frameworks": "LBSOfflineSDK.framework"
+  },
+  "source": {
+    "git": "https://github.com/wltsuiac/Mtrec-IOS-LBSOfflineSDK.git",
+    "tag": "0.0.2"
+  },
+  "exclude_files": "Classes/Exclude",
+  "frameworks": [
+    "CoreLocation",
+    "CoreBluetooth",
+    "CoreMotion"
+  ]
+}

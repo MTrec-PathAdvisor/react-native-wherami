@@ -3,5 +3,7 @@
 #import <LBSOfflineSDK/LBSOfflineSDK.h>
 
 @interface Wherami : RCTEventEmitter <RCTBridgeModule,LocationEngineDelegate>
+//@interface Wherami : NSObject
+
 
 @end

@@ -27,9 +27,13 @@ RCT_EXPORT_METHOD(checkSelfPermission)
 RCT_EXPORT_METHOD(initializeSDK)
 {
     NSLog(@"ios:initialize ios-SDK");
-    [LocationEngine engine];
-    [[LocationEngine engine] setDelegate:self];
-    [[LocationEngine engine] authorityNotify:self];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [LocationEngine engine];
+        [[LocationEngine engine] setDelegate:self];
+        [[LocationEngine engine] authorityNotify:self];
+    });
+//    [LocationEngine engine];
+    
     // sendEvent(reactContext, "onReady", null);
     [self sendEventWithName:@"onReady" body:nil];
     
@@ -38,7 +42,13 @@ RCT_EXPORT_METHOD(initializeSDK)
 RCT_EXPORT_METHOD(start)
 {
     NSLog(@"ios:start engine");
-    [[LocationEngine engine] turnOnPosition];
+    // [LocationEngine engine];
+    // [[LocationEngine engine] setDelegate:self];
+    // [[LocationEngine engine] authorityNotify:self];
+    dispatch_async(dispatch_get_main_queue(), ^{
+
+        [[LocationEngine engine] turnOnPosition];
+    });
     [self sendEventWithName:@"onEngineStarted" body:nil];
     // sendEvent(reactContext, "onEngineStarted", null);
     
@@ -47,7 +57,9 @@ RCT_EXPORT_METHOD(start)
 RCT_EXPORT_METHOD(stop)
 {
     NSLog(@"ios:stop engine");
-    [[LocationEngine engine] turnOffPosition];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[LocationEngine engine] turnOffPosition];
+    });
     [self sendEventWithName:@"onEngineStopped" body:nil];
     // sendEvent(reactContext, "onEngineStopped", null);
 };
@@ -62,15 +74,19 @@ RCT_EXPORT_METHOD(stop)
 
 - (void)didUpdateLocation:(HistoryCaled *)history{
     if (!history) {
-        [self sendEventWithName:@"onLocationUpdate" body:@{@"location":nil}];
+        [self sendEventWithName:@"onLocationUpdate" body:@{@"location":[NSNull null]}];
         return;
     }else{
+        NSNumber *x=[NSNumber numberWithFloat:history.location.x];
+        NSNumber *y=[NSNumber numberWithFloat:history.location.y];
+        NSNumber *radius=[NSNumber numberWithFloat:0.0];
         NSDictionary * locationMap =@{
-                             @"x" : history.location.x,
-                             @"y" : history.location.y,
+                             @"x" : x,
+                             @"y" : y,
                              @"areaId" : history.level,
-                             @"radius": @"location.radius"
+                             @"radius": radius
                              };
+        NSLog(@"loc update: %@",locationMap.description);
         [self sendEventWithName:@"onLocationUpdate" body:@{@"location":locationMap}];
         
     }
