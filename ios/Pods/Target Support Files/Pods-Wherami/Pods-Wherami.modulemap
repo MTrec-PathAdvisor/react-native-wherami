@@ -1,0 +1,6 @@
+framework module Pods_Wherami {
+  umbrella header "Pods-Wherami-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,21 @@
+PODS:
+  - Mtrec-IOS-LBSOfflineSDK (0.0.2)
+
+DEPENDENCIES:
+  - Mtrec-IOS-LBSOfflineSDK (from `https://github.com/wltsuiac/Mtrec-IOS-LBSOfflineSDK.git`)
+
+EXTERNAL SOURCES:
+  Mtrec-IOS-LBSOfflineSDK:
+    :git: https://github.com/wltsuiac/Mtrec-IOS-LBSOfflineSDK.git
+
+CHECKOUT OPTIONS:
+  Mtrec-IOS-LBSOfflineSDK:
+    :commit: 38640481ca1eff5533a3be513b6e15b4e9c1da5a
+    :git: https://github.com/wltsuiac/Mtrec-IOS-LBSOfflineSDK.git
+
+SPEC CHECKSUMS:
+  Mtrec-IOS-LBSOfflineSDK: 5e487ca454b9ce225683637af91439d63bbcdaaa
+
+PODFILE CHECKSUM: 297d3ac75fb8afb19bfdf95d77c105aebbe856c6
+
+COCOAPODS: 1.9.3

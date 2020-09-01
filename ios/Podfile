@@ -1,0 +1,16 @@
+# Uncomment the next line to define a global platform for your project
+source 'https://github.com/wltsuiac/privatePodRepo.git'
+source 'https://github.com/CocoaPods/Specs.git'
+
+platform :ios, '9.0'
+
+target 'Wherami' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Wherami
+  # pod 'React', :path => '../node_modules/react-native/'
+  pod 'Mtrec-IOS-LBSOfflineSDK', :git => "https://github.com/wltsuiac/Mtrec-IOS-LBSOfflineSDK.git"
+  # pod 'Mtrec-IOS-LBSOfflineSDK', '0.0.2'
+
+end
