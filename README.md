@@ -31,3 +31,7 @@ Wherami.start();
 //Stop the engine
 Wherami.stop();
 ```
+
+PS: for ios development, please add 
+`source 'https://github.com/MTrec-PathAdvisor/privatePodRepo.git'`
+in your Podfile, then `pod install` to load pod dependency 
