@@ -1,5 +1,5 @@
 PODS:
-  - Mtrec-IOS-LBSOfflineSDK (0.0.5)
+  - Mtrec-IOS-LBSOfflineSDK (0.0.6)
 
 DEPENDENCIES:
   - Mtrec-IOS-LBSOfflineSDK (~> 0.0.2)
@@ -9,7 +9,7 @@ SPEC REPOS:
     - Mtrec-IOS-LBSOfflineSDK
 
 SPEC CHECKSUMS:
-  Mtrec-IOS-LBSOfflineSDK: 40a719af0d1f93d2559ae3ad495113fc352989bb
+  Mtrec-IOS-LBSOfflineSDK: 55d832f210e65f5c9fd5a2fcffbb357c792e140e
 
 PODFILE CHECKSUM: 6e861a545af50ad292ae1d1c390956da19180f0b
 
