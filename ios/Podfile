@@ -10,7 +10,7 @@ target 'Wherami' do
 
   # Pods for Wherami
   # pod 'React', :path => '../node_modules/react-native/'
-  pod 'Mtrec-IOS-LBSOfflineSDK', :git => "https://github.com/wltsuiac/Mtrec-IOS-LBSOfflineSDK.git"
-  # pod 'Mtrec-IOS-LBSOfflineSDK', '0.0.2'
+  # pod 'Mtrec-IOS-LBSOfflineSDK', :git => "https://github.com/wltsuiac/Mtrec-IOS-LBSOfflineSDK.git"
+  pod 'Mtrec-IOS-LBSOfflineSDK', '~> 0.0.2'
 
 end
