@@ -32,6 +32,8 @@ Wherami.start();
 Wherami.stop();
 ```
 
-PS: for ios development, please add 
+PS: for ios development,make sure you have access right to privatePodRepo.
+please add 
 `source 'https://github.com/MTrec-PathAdvisor/privatePodRepo.git'`
-in your Podfile, then `pod install` to load pod dependency 
+in your Podfile, then `pod install` to load pod dependency.
+
