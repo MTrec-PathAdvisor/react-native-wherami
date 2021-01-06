@@ -88,7 +88,7 @@ public class RNWheramiModule extends ReactContextBaseJavaModule implements MapEn
     private void initializeSDK() {
         try {
             Client.Configure("https://dy199-079.ust.hk",
-                    "HKUST", reactContext
+                    "HKUST_v2", reactContext
             );
         } catch (URISyntaxException e) {
             WritableMap params = Arguments.createMap();
@@ -131,9 +131,9 @@ public class RNWheramiModule extends ReactContextBaseJavaModule implements MapEn
             } catch (StreamCorruptedException e) {
                 e.printStackTrace();
             }
+            mapEngine.attachEngineStatusCallback(new EngineStatusListener());
+            mapEngine.attachLocationUpdateCallback(this);
         }
-        mapEngine.attachLocationUpdateCallback(this);
-        mapEngine.attachEngineStatusCallback(new EngineStatusListener());
         mapEngine.start();
     }
 
