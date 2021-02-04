@@ -35,6 +35,10 @@ rootProject.allprojects {
                 password "hkust"
             }
         }
+        jcenter()
+        flatDir {
+            dirs 'libs'
+        }
     }
 }
 
@@ -45,6 +49,8 @@ repositories {
 
 dependencies {
     implementation 'com.facebook.react:react-native:+'
-    implementation 'com.mtrec.wherami:offlinesdk:1.0.8.9'
+    implementation(name:'raw_offlinesdk-1.0.8.15', ext:'aar')
+    implementation 'org.jetbrains:annotations-java5:15.0'
+//    implementation 'com.mtrec.wherami:offlinesdk:1.0.8.9'
 }
   

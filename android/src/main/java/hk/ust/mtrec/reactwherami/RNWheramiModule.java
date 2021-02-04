@@ -3,7 +3,7 @@ package hk.ust.mtrec.reactwherami;
 import android.content.pm.PackageManager;
 import android.os.Build;
 
-import androidx.annotation.Nullable;
+import org.jetbrains.annotations.Nullable;
 
 import android.util.Log;
 
