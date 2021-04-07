@@ -39,6 +39,7 @@
 		32EBA113590D41C8358BDF1A6DF2C976 /* Pods-Wherami.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Wherami.release.xcconfig"; sourceTree = "<group>"; };
 		48ABA6B812C126771FD4D9902F8DBAB8 /* Mtrec-IOS-LBSOfflineSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Mtrec-IOS-LBSOfflineSDK.debug.xcconfig"; sourceTree = "<group>"; };
 		4BF25F47178265E1A8F77D54DB8BA0C2 /* Pods-Wherami.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Wherami.debug.xcconfig"; sourceTree = "<group>"; };
+		54329D0C9B98FFE61A00A335DE786128 /* LBSOfflineSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LBSOfflineSDK.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/lbsios-czkkqytdfwcxnzbsyrcoouayqxne/Build/Intermediates.noindex/ArchiveIntermediates/LBSOfflineSDK/IntermediateBuildFilesPath/UninstalledProducts/iphoneos/LBSOfflineSDK.framework"; sourceTree = "<group>"; };
 		6EB4EFB7354CF5CA97A533F738463D3A /* Pods-Wherami-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Wherami-acknowledgements.plist"; sourceTree = "<group>"; };
 		9196AD1AE4D68B685A7CAE40A437F12F /* Pods-Wherami-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Wherami-acknowledgements.markdown"; sourceTree = "<group>"; };
 		95AE284E0047426AE7D622BCA51C9DC6 /* Pods_Wherami.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Wherami.framework; path = "Pods-Wherami.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,7 +47,6 @@
 		9B958EB317814747BCFBCF43F76B07D0 /* Pods-Wherami.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Wherami.modulemap"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A106F1F16946BFCF30DBD39D68C5B302 /* Pods-Wherami-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Wherami-dummy.m"; sourceTree = "<group>"; };
-		DD1DD6A6973027AC7904C466918D7B64 /* LBSOfflineSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LBSOfflineSDK.framework; sourceTree = "<group>"; };
 		E95C1F698592E7E9C80A17712962F9FC /* Pods-Wherami-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Wherami-Info.plist"; sourceTree = "<group>"; };
 		F988E52E41AFE56723DAA83D63F3E7A4 /* Pods-Wherami-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Wherami-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,7 +82,7 @@
 		303CF4441AF03A0C71C8D10D03074D06 /* Mtrec-IOS-LBSOfflineSDK */ = {
 			isa = PBXGroup;
 			children = (
-				5655BF82C306343170080068019C3D3C /* Frameworks */,
+				D9C65D6EAD0B29B00BBEF5966ACE5E1E /* Frameworks */,
 				AB4E10DEE5EC615BCE53B5FF1DC3D61A /* Support Files */,
 			);
 			name = "Mtrec-IOS-LBSOfflineSDK";
@@ -111,14 +111,6 @@
 			);
 			name = "Pods-Wherami";
 			path = "Target Support Files/Pods-Wherami";
-			sourceTree = "<group>";
-		};
-		5655BF82C306343170080068019C3D3C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				DD1DD6A6973027AC7904C466918D7B64 /* LBSOfflineSDK.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		AB4E10DEE5EC615BCE53B5FF1DC3D61A /* Support Files */ = {
@@ -154,6 +146,14 @@
 			isa = PBXGroup;
 			children = (
 				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D9C65D6EAD0B29B00BBEF5966ACE5E1E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				54329D0C9B98FFE61A00A335DE786128 /* LBSOfflineSDK.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

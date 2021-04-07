@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   # s.vendored_framework= 'ios/Frameworks/LBSOfflineSDK.framework'
   s.dependency "React"
-  s.dependency 'Mtrec-IOS-LBSOfflineSDK','~>0.0.2'
+  s.dependency 'Mtrec-IOS-LBSOfflineSDK','~>0.0.6'
   # ...
   # s.dependency "..."
 end

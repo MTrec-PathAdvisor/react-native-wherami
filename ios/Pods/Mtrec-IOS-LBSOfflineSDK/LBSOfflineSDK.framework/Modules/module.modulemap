@@ -1,6 +1,0 @@
-framework module LBSOfflineSDK {
-  umbrella header "LBSOfflineSDK.h"
-
-  export *
-  module * { export * }
-}

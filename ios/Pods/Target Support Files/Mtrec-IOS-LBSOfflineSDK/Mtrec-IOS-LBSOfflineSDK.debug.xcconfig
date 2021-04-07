@@ -1,4 +1,5 @@
 CONFIGURATION_BUILD_DIR = ${PODS_CONFIGURATION_BUILD_DIR}/Mtrec-IOS-LBSOfflineSDK
+EXCLUDED_ARCHS[sdk=iphonesimulator*] = arm64
 FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Mtrec-IOS-LBSOfflineSDK"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 OTHER_LDFLAGS = $(inherited) -framework "CoreBluetooth" -framework "CoreLocation" -framework "CoreMotion"
