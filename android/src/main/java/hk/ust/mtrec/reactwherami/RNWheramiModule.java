@@ -172,6 +172,11 @@ public class RNWheramiModule extends ReactContextBaseJavaModule implements MapEn
             locationMap = Arguments.createMap();
             locationMap.putDouble("x", location.x);
             locationMap.putDouble("y", location.y);
+            if(location.areaId.contains("F")){
+                locationMap.putString("areaId", location.areaId.replaceAll("F",""));
+            }else{
+                locationMap.putString("areaId", location.areaId);
+            }
             locationMap.putString("areaId", location.areaId);
             locationMap.putDouble("radius", location.radius);
             params.putMap("location", locationMap);
