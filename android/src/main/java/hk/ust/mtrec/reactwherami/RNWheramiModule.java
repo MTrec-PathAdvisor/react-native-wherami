@@ -87,7 +87,7 @@ public class RNWheramiModule extends ReactContextBaseJavaModule implements MapEn
     @ReactMethod
     private void initializeSDK() {
         try {
-            Client.Configure("https://dy199-079.ust.hk",
+            Client.Configure("http://dy199-079.ust.hk",
                     "HKUST_v2", reactContext
             );
         } catch (URISyntaxException e) {
