@@ -22,7 +22,7 @@
 ```javascript
 import Wherami from 'react-native-wherami';
 
-//Check permissions required for Wherami
+//Check  required for Wherami
 Wherami.checkSelfPermission();
 //Initializing Wherami 
 Wherami.initializeSDK();
