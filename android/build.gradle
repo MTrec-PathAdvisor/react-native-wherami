@@ -29,7 +29,7 @@ android {
 rootProject.allprojects {
     repositories {
         maven() {
-            url 'http://143.89.144.2:8081/repository/wherami/'
+            url 'http://143.89.199.163:8081/repository/wherami/'
             credentials {
                 username "path_advisor"
                 password "hkust"
