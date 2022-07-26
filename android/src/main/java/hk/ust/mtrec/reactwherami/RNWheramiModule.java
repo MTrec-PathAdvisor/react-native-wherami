@@ -88,8 +88,11 @@ public class RNWheramiModule extends ReactContextBaseJavaModule implements MapEn
     private void initializeSDK() {
         try {
             Client.Configure("http://dy199-079.ust.hk",
-                    "HKUST_v2", reactContext
+                    "HKUST_fusion", reactContext
             );
+            Map<String,Object> options = new HashMap<>();
+            options.put("wherami.lbs.sdk.core.MapEngineFactory:EngineType","wherami/lbs.sdk.core.NativeMapEngine");
+            Client.ConfigExtra(options);
         } catch (URISyntaxException e) {
             WritableMap params = Arguments.createMap();
             params.putString("message", e.getMessage());
