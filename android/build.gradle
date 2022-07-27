@@ -30,10 +30,15 @@ rootProject.allprojects {
     repositories {
         maven() {
             url 'http://143.89.199.163:8081/repository/wherami/'
+            allowInsecureProtocol = true
             credentials {
                 username "path_advisor"
                 password "hkust"
             }
+        }
+        jcenter()
+        flatDir {
+            dirs 'libs'
         }
     }
 }
@@ -45,8 +50,9 @@ repositories {
 
 dependencies {
     implementation 'com.facebook.react:react-native:+'
-    // implementation 'com.mtrec.wherami:offlinesdk:1.0.8.15'
+//     implementation 'com.mtrec.wherami:offlinesdk:1.0.8.15'
+    implementation(name:'offlinesdk-1.0.8.15', ext:'aar')
 
-    implementation 'com.mtrec.wherami:offlinesdk:1.1.0-b1'
+//    implementation 'com.mtrec.wherami:offlinesdk:1.1.0-b1'
 }
   
